@@ -51,8 +51,17 @@ PLUGINS = [
     'ipynb',
     'i18n_subsites',
     'tipue_search',
-    'sitemap'
+    'sitemap',
+    'disqus_static'
 ]
+
+DISQUS_SITENAME = 'enchyme'
+DISQUS_SECRET_KEY = (
+    'rRYr8iwIJhyZsBqaPrMB5x5OEgwnlEq7szt8qp5yVv1qh5UM2czjnZvS1ceeffNL'
+)
+DISQUS_PUBLIC_KEY = (
+    'KF3jWpUzyOC6fEBJpQFUBNAX2bFreBJ4zVoZaZ3IMqPznHUw9imhYnIihQvNKkSR'
+)
 
 # For Search
 DIRECT_TEMPLATES = (
