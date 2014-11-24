@@ -24,6 +24,20 @@ I18N_SUBSITES = {
     }
 }
 
+SITEMAP = {
+    'format': 'xml',
+    'priorities': {
+        'articles': 0.5,
+        'indexes': 0.5,
+        'pages': 0.5
+    },
+    'changefreqs': {
+        'articles': 'monthly',
+        'indexes': 'daily',
+        'pages': 'monthly'
+    }
+}
+
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
 CATEGORY_FEED_ATOM = None
@@ -33,7 +47,17 @@ AUTHOR_FEED_RSS = None
 
 MARKUP = ('md', 'ipynb')
 PLUGIN_PATHS = ['./plugins']
-PLUGINS = ['ipynb', 'i18n_subsites']
+PLUGINS = [
+    'ipynb',
+    'i18n_subsites',
+    'tipue_search',
+    'sitemap'
+]
+
+# For Search
+DIRECT_TEMPLATES = (
+    ('index', 'tags', 'categories', 'authors', 'archives', 'search')
+)
 
 # Blogroll
 LINKS = (('Pelican', 'http://getpelican.com/'),
