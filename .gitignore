@@ -54,4 +54,6 @@ docs/_build/
 target/
 
 # Pelican
-output
+output/
+cache/
+
