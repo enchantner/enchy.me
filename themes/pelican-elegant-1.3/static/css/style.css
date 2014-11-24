@@ -6,7 +6,7 @@ h1, h2, h3, h4, h5, h5 {
     font-family: Baskerville, Garamond, Georgia, "DejaVu Serif", "Times New Roman", Times, serif;
     font-weight: normal;
 }
-    
+
 #content-sans-footer{
     min-height:100%;
 }
@@ -64,6 +64,7 @@ a.disqus-comment-count {
 div#disqus_thread {
 padding-left:10px;
 padding-right:10px;
+height: auto;
 }
 
 /* Syntax Highlight */
@@ -357,9 +358,9 @@ ul.top-menu li a {
 }
 
 .amp {
-    font-family:"Warnock Pro", "Goudy Old Style","Palatino","Book Antiqua",serif; 
+    font-family:"Warnock Pro", "Goudy Old Style","Palatino","Book Antiqua",serif;
     font-style:italic;
-}    
+}
 
 img {
     border: 1px solid #EEEEEE;
