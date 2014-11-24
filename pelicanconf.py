@@ -9,10 +9,20 @@ SITEURL = ''
 PATH = 'content'
 
 THEME = 'themes/pelican-elegant-1.3'
+JINJA_EXTENSIONS = ['jinja2.ext.i18n']
 
 TIMEZONE = 'Europe/Moscow'
 
-DEFAULT_LANG = 'ru'
+DEFAULT_LANG = 'en'
+LOCALE = 'en_US.UTF-8'
+
+I18N_SUBSITES = {
+    'ru': {
+        'SITENAME': 'Берлога инженера',
+        'LOCALE': 'ru_RU.UTF-8',
+        'THEME': 'themes/pelican-elegant-1.3'
+    }
+}
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
@@ -23,7 +33,7 @@ AUTHOR_FEED_RSS = None
 
 MARKUP = ('md', 'ipynb')
 PLUGIN_PATHS = ['./plugins']
-PLUGINS = ['ipynb']
+PLUGINS = ['ipynb', 'i18n_subsites']
 
 # Blogroll
 LINKS = (('Pelican', 'http://getpelican.com/'),
