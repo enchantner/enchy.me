@@ -15,7 +15,7 @@ FTP_TARGET_DIR=/
 SSH_HOST=enchy.me
 SSH_PORT=22
 SSH_USER=meow-nofer
-SSH_TARGET_DIR=/var/www
+SSH_TARGET_DIR=/var/www/enchy.me
 
 S3_BUCKET=my_s3_bucket
 
