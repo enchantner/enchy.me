@@ -88,7 +88,9 @@
 			<div class="row">
 				{% for link in links %}
 				<div class="3u 12u(mobile)">
-					<a href="{{ link.link }}" class="image full"><img src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/images/pic03.jpg" alt=""></a>
+					<a href="{{ link.link }}" class="image full">
+						<img src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/{{ link.thumbnail }}" alt="">
+					</a>
 				</div>
 				{% endfor %}
 				<!--div class="3u 12u(mobile)">
@@ -108,9 +110,7 @@
 </div>
 
 <!-- Calendar Wrapper -->
-<div id="main-wrapper">
-
-	<!-- Calendar -->
+<!-- div id="main-wrapper">
 		<div id="main" class="container">
 
 			<div class="row">
@@ -148,5 +148,5 @@
 
 		</div>
 
-</div>
+</div-->
 {% endblock %}
