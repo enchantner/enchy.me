@@ -21,13 +21,12 @@
                                 {% include 'article_infos.html' %}
                             </header>
                             <div class="clearfix"></div>
-                            <a href="{{ SITEURL }}/{{ post.url }}" class="image left"><img src="{{ SITEURL }}/{{ post.indeximage }}" alt=""></a>
+                            {% if post.indeximage %}<a href="{{ SITEURL }}/{{ post.url }}" class="image left"><img src="{{ SITEURL }}/{{ post.indeximage }}" alt=""></a>{% endif %}
                             <p>{{ post.content }}</p>
                         </article>
 
                         {% if DISQUS_SITENAME and SITEURL and post.status != "draft" %}
                         <div class="comments">
-                          <h2>Comments: </h2>
                           <div id="disqus_thread"></div>
                           <script type="text/javascript">
                           var disqus_config = function () {

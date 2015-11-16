@@ -41,7 +41,7 @@
 									<span class="byline">{{ post.summary|striptags }}</span>
 								</header>
 								<p>{{ post.date.strftime("%B %d, %Y - %H:%M") }}</p>
-								<a href="#" class="image full"><img src="{{ SITEURL }}/{{ post.indeximage }}" alt=""></a>
+								{% if post.indeximage %}<a href="#" class="image full"><img src="{{ SITEURL }}/{{ post.indeximage }}" alt=""></a>{% endif %}
 							</div>
 							<div class="6u 12u(mobile)">
 								{{ post.cut }}
