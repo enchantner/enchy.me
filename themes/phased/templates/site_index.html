@@ -1,0 +1,152 @@
+{% extends "base.html" %}
+
+{% block title %}{{ page.title }}{% endblock %}
+
+{% block banner %}
+<!-- Banner Wrapper -->
+<div id="banner-wrapper">
+
+    <!-- Banner -->
+        <div id="banner" class="container">
+            <h2>No amount of experimentation can ever prove me right; a single experiment can prove me wrong.</h2>
+            <span>Albert Einstein</span>
+        </div>
+
+</div>
+{% endblock banner %}
+
+{% block content %}
+
+{% import 'translations.html' as translations with context %}
+{{ translations.translations_for(page) }}
+
+{% set posts = articles|selectattr("contenttype", "equalto", "article") %}
+{% set links = articles|selectattr("contenttype", "equalto", "link") %}
+{% set events = articles|selectattr("contenttype", "equalto", "event") %}
+
+<!-- Featured Wrapper -->
+<div class="wrapper-style1">
+
+	<!-- Featured -->
+		<div id="featured" class="container">
+			<div class="row 200%">
+
+				{% for post in posts|batch(2)|first %}
+				<div class="6u 12u(mobile)">
+					<section>
+						<div class="row">
+							<div class="6u 12u(mobile)">
+								<header>
+									<a href="{{ SITEURL }}/{{ post.url }}" class="post-header"><h2>{{ post.title|striptags }}</h2></a>
+									<span class="byline">{{ post.summary|striptags }}</span>
+								</header>
+								<p>{{ post.date.strftime("%B %d, %Y - %H:%M") }}</p>
+								<a href="#" class="image full"><img src="{{ SITEURL }}/{{ post.indeximage }}" alt=""></a>
+							</div>
+							<div class="6u 12u(mobile)">
+								{{ post.cut }}
+								<a href="{{ post.url }}" class="button">Read full post</a>
+							</div>
+						</div>
+					</section>
+				</div>
+				{% endfor %}
+
+				<!-- div class="6u 12u(mobile)">
+					<section>
+						<div class="row">
+							<div class="6u 12u(mobile)">
+								<a href="#" class="image full"><img src="images/pic02.jpg" alt=""></a>
+							</div>
+							<div class="6u 12u(mobile)">
+								<header>
+									<h2>Donec rhoncus dapibus sumpri urna justo, luctus magna gravida</h2>
+									<span class="byline">Magna acculu sed sapien</span>
+								</header>
+								<p>Morbi vulputate ibendum ultrices. Donec vel consequat erat Sed facilisis eleifend fermentum. Suspendisse felis ipsum, euismod eu, faucibus at magna a ac ac lacus. Ut ac sapien.</p>
+								<a href="#" class="button">More Info</a>
+							</div>
+						</div>
+					</section>
+				</div-->
+			</div>
+		</div>
+
+</div>
+
+<!-- Links Wrapper -->
+<div class="wrapper-style2">
+
+	<!-- Links -->
+		<section id="portfolio" class="container">
+			<span class="pennant"><span class="icon fa-chain"></span></span>
+			<header>
+				<h2>Some interesting links I found</h2>
+				<span class="byline">Not advertising and mostly virus-free</span>
+			</header>
+
+			<div class="row">
+				{% for link in links %}
+				<div class="3u 12u(mobile)">
+					<a href="{{ link.link }}" class="image full"><img src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/images/pic03.jpg" alt=""></a>
+				</div>
+				{% endfor %}
+				<!--div class="3u 12u(mobile)">
+					<a href="#" class="image full"><img src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/images/pic04.jpg" alt=""></a>
+				</div>
+				<div class="3u 12u(mobile)">
+					<a href="#" class="image full"><img src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/images/pic05.jpg" alt=""></a>
+				</div>
+				<div class="3u 12u(mobile)">
+					<a href="#" class="image full"><img src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/images/pic06.jpg" alt=""></a>
+				</div-->
+			</div>
+
+			<!--p>Suspendisse eu massa quam, sed egestas mi. Pellentesque tortor libero, viverra eu auctor at, tincidunt ut arcu. Nam dapibus ante<br /> posuere est bibendum vel rutrum tellus tempus. Cras ac viverra arcu. Mauris lobortis libero at purus mattis sollicitudin.</p-->
+		</section>
+
+</div>
+
+<!-- Calendar Wrapper -->
+<div id="main-wrapper">
+
+	<!-- Calendar -->
+		<div id="main" class="container">
+
+			<div class="row">
+				<div class="7u 12u(mobile)">
+					<section id="content">
+						<header>
+							<h2>Events happening with me or some other guys</h2>
+							<span class="byline">Donec ut arcu nisi aenean are euismod etiam tempus risus eget</span>
+						</header>
+						<div class="row">
+							<div class="6u 12u(mobile)">
+								<p>Tusce rhoncus pulvinar tortor, a rhoncus diam hendrerit ut. Etiam orci sapien, semper impri morbi vulputate ibendum ultrices.</p>
+								<a href="#" class="button">More Info</a>
+							</div>
+							<div class="6u 12u(mobile)">
+								<p>Tusce rhoncus pulvinar tortor, a rhoncus diam hendrerit ut. Etiam orci sapien, semper impri morbi vulputate ibendum ultrices.</p>
+								<a href="#" class="button">More Info</a>
+							</div>
+						</div>
+					</section>
+				</div>
+				<div class="5u 12u(mobile)">
+					<section>
+						<ul class="style1">
+							{% for event in events|batch(3)|first %}
+							<li{% if loop.index0 == 0 %} class="first"{% endif %}>
+								<span class="left"><span class="date"><a href="{{ SITEURL }}/{{ event.url }}">{{ event.date.strftime("%B") }}<b>{{ event.date.strftime("%d") }}</b></a></span><strong></strong></span>
+								<span class="right"><a href="{{ SITEURL }}/{{ event.url }}">{{ event.description }}</a></span>
+							</li>
+							{% endfor %}
+						</ul>
+					</section>
+				</div>
+			</div>
+
+		</div>
+
+</div>
+{% endblock %}

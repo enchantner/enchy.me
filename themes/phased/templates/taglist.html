@@ -1,0 +1,5 @@
+{% if post.tags %}<ul class="tags">
+{% for tag in post.tags %}
+    <li><a href="{{ SITEURL }}/{{ tag.url }}">{{ tag|escape }}</a></li>
+{% endfor %}
+</ul>{% endif %}

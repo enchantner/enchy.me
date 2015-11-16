@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<section id="content" class="body">
+<h1>Archives for {{ SITENAME }}</h1>
+
+<dl>
+{% for post in dates %}
+	{% if post.contenttype == "article" %}
+    	<dt>{{ post.locale_date }}</dt>
+    	<dd><header><a href="{{ SITEURL }}/{{ post.url }}" class="post-header"><h2>{{ post.title }}</h2></a></header></dd>
+    {% endif %}
+{% endfor %}
+</dl>
+</section>
+{% endblock %}

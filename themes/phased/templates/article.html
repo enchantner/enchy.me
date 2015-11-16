@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block title %}{{ article.title|striptags }}{% endblock %}
+
+{% block body_class %}right-sidebar{% endblock body_class %}
+
+{% block content %}
+{% set recent = articles|selectattr("contenttype", "equalto", "article") %}
+{% set post = article %}
+
+<!-- Wide Content Wrapper -->
+<div class="wrapper-style2">
+
+    <!-- Wide Content -->
+        <div class="container">
+            <div class="row 200%">
+                <div class="8u 12u(mobile)">
+                    <section id="left-content">
+                        <article>
+                            <header>
+                                <h1>{{ post.title|striptags }}</h1>
+                                {% include 'article_infos.html' %}
+                            </header>
+                            <div class="clearfix"></div>
+                            <a href="{{ SITEURL }}/{{ post.url }}" class="image left"><img src="{{ SITEURL }}/{{ post.indeximage }}" alt=""></a>
+                            <p>{{ article.content }}</p>
+                        </article>
+
+                        {% if DISQUS_SITENAME and SITEURL and article.status != "draft" %}
+                        <div class="comments">
+                          <h2>Comments !</h2>
+                          <div id="disqus_thread"></div>
+                          <script type="text/javascript">
+                            var disqus_shortname = '{{ DISQUS_SITENAME }}';
+                            var disqus_identifier = '{{ article.url }}';
+                            var disqus_url = '{{ SITEURL }}/{{ article.url }}';
+                            (function() {
+                            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                            dsq.src = '//{{ DISQUS_SITENAME }}.disqus.com/embed.js';
+                            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                          </script>
+                          <noscript>Please enable JavaScript to view the comments.</noscript>
+                        </div>
+                        {% endif %}
+                    </section>
+                </div>
+
+                <div class="4u 12u(mobile)">
+                    <section id="right-sidebar">
+                        <header class="title">
+                            <h2>Recent Posts</h2>
+                        </header>
+                        <ul class="style3">
+                            {% for post in recent|batch(5)|first %}
+                            <li class="first">
+                                <p class="date"><a href="{{ SITEURL }}/{{ post.url }}">{{ post.date.strftime("%B") }}<b>{{ post.date.strftime("%d") }}</b></a></p>
+                                <a href="{{ SITEURL }}/{{ post.url }}" class="post-header"><h3>{{ post.title|striptags }}</h3></a>
+                                <p><a href="{{ SITEURL }}/{{ post.url }}">{{ post.summary|striptags }}</a></p>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        <a href="{{ SITEURL }}/blog/archives/archives.html" class="button">Browse Archive</a>
+                    </section>
+                </div>
+            </div>
+        </div>
+</div>
+{% endblock content %}

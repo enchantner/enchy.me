@@ -1,0 +1,112 @@
+#header-wrapper {
+	background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../images/back.jpg'), #000;
+	background-repeat: no-repeat;
+    background-position: center top;
+}
+
+#nav {
+	top: 1em;
+}
+
+#nav ul li.current_page_item a {
+	font-weight: bold;
+	color: #4c955d;
+	border-bottom: 2px solid #4c955d;
+}
+
+#nav ul li a {
+	font-size: 1.4em;
+	border-bottom: 2px dotted white;
+	text-shadow: 1px 1px 2px black;
+}
+
+#nav ul li a:hover {
+	border-bottom: 2px solid #4694bb;
+	color: #4694bb;
+}
+
+#header {
+	height: 13em;
+}
+
+#logo {
+	top: 32%;
+}
+
+#logo h1 {
+	background-color:rgba(255, 255, 255, 0.7);
+	text-shadow: 1px 1px 2px black;
+}
+
+#banner {
+	padding-bottom: 2em;
+}
+
+#banner h2 {
+	font-size: 2.2em;
+	text-shadow: 1px 1px 2px black;
+}
+
+#banner span {
+	text-shadow: 1px 1px 2px black;
+	font-style: italic;
+}
+
+header a.post-header {
+	text-decoration: none;
+}
+
+header a.post-header h2:hover {
+	text-decoration: underline;
+	color: #777;
+}
+
+ul.style1 .left {
+	padding-top: 1em;
+}
+
+ul.style3 .date {
+	width: 80px;
+}
+
+ul.contact li a:hover:before {
+	background: #4694bb;
+}
+
+div.clearfix {
+	clear: both;
+}
+
+div.smaller-photo {
+	width: 50%;
+}
+
+h1 {
+	margin: 0em 0em 25px 2px;
+	font-size: 24px;
+}
+
+#left-content article {
+	clear: both;
+}
+
+ul.tags li {
+	margin: 10px 3px 10px 3px;
+	padding: 2px;
+	float: left;
+	background: #c0c7c9;
+	border-radius: 3px;
+}
+
+ul.tags li:hover {
+	background: #4694bb;
+}
+
+ul.tags li a {
+	text-decoration: none;
+	color: #fff;
+}
+
+footer.post-info {
+	margin-top: 10px;
+}

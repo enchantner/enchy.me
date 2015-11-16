@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block content_title %}{% endblock %}
+
+{% block body_class %}right-sidebar{% endblock body_class %}
+
+
+{% block content %}
+
+{% set posts = articles|selectattr("contenttype", "equalto", "article") %}
+{% set recent = articles|selectattr("contenttype", "equalto", "article") %}
+
+{% if posts %}
+<!-- Wide Content Wrapper -->
+<div class="wrapper-style2">
+
+    <!-- Wide Content -->
+        <div class="container">
+            <div class="row 200%">
+                <div class="8u 12u(mobile)">
+                    <section id="left-content">
+                        {% for post in posts %}
+                        <article>
+                            <header>
+                                <a href="{{ SITEURL }}/{{ post.url }}" class="post-header"><h2>{{ post.title|striptags }}</h2></a>
+                                {% include 'article_infos.html' %}
+                            </header>
+                            <div class="clearfix"></div>
+                            <a href="{{ SITEURL }}/{{ post.url }}" class="image left"><img src="{{ SITEURL }}/{{ post.indeximage }}" alt=""></a>
+                            <p>{{ post.cut }}</p>
+                            <a href="{{ SITEURL }}/{{ post.url }}" class="button">Read full post</a>
+                        </article>
+                        {% endfor %}
+                    </section>
+                </div>
+
+                <div class="4u 12u(mobile)">
+                    <section id="right-sidebar">
+                        <header class="title">
+                            <h2>Recent Posts</h2>
+                        </header>
+                        <ul class="style3">
+                            {% for post in recent|batch(5)|first %}
+                            <li class="first">
+                                <p class="date"><a href="{{ SITEURL }}/{{ post.url }}">{{ post.date.strftime("%B") }}<b>{{ post.date.strftime("%d") }}</b></a></p>
+                                <a href="{{ SITEURL }}/{{ post.url }}" class="post-header"><h3>{{ post.title|striptags }}</h3></a>
+                                <p><a href="{{ SITEURL }}/{{ post.url }}">{{ post.summary|striptags }}</a></p>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        <a href="{{ SITEURL }}/blog/archives/archives.html" class="button">Browse Archive</a>
+                    </section>
+                </div>
+            </div>
+        </div>
+</div>
+{% endif %}
+{% endblock content %}
