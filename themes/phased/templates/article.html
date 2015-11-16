@@ -22,24 +22,29 @@
                             </header>
                             <div class="clearfix"></div>
                             <a href="{{ SITEURL }}/{{ post.url }}" class="image left"><img src="{{ SITEURL }}/{{ post.indeximage }}" alt=""></a>
-                            <p>{{ article.content }}</p>
+                            <p>{{ post.content }}</p>
                         </article>
 
-                        {% if DISQUS_SITENAME and SITEURL and article.status != "draft" %}
+                        {% if DISQUS_SITENAME and SITEURL and post.status != "draft" %}
                         <div class="comments">
-                          <h2>Comments !</h2>
+                          <h2>Comments: </h2>
                           <div id="disqus_thread"></div>
                           <script type="text/javascript">
-                            var disqus_shortname = '{{ DISQUS_SITENAME }}';
-                            var disqus_identifier = '{{ article.url }}';
-                            var disqus_url = '{{ SITEURL }}/{{ article.url }}';
-                            (function() {
-                            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                            dsq.src = '//{{ DISQUS_SITENAME }}.disqus.com/embed.js';
-                            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-                            })();
+                          var disqus_config = function () {
+                            this.page.url = "{{ post.url }}";
+                            this.page.identifier = "{{ post.url }}";
+                          };
+
+                          (function() { // DON'T EDIT BELOW THIS LINE
+                          var d = document, s = d.createElement('script');
+
+                          s.src = '//enchyme.disqus.com/embed.js';
+
+                          s.setAttribute('data-timestamp', +new Date());
+                          (d.head || d.body).appendChild(s);
+                          })();
                           </script>
-                          <noscript>Please enable JavaScript to view the comments.</noscript>
+                          <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
                         </div>
                         {% endif %}
                     </section>
