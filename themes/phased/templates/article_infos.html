@@ -1,8 +1,11 @@
 <footer class="post-info">
-        <abbr class="published" title="{{ post.date.isoformat() }}">
-                {{ post.date.strftime("%B %d, %Y - %H:%M") }}
-        </abbr>
-{% include 'taglist.html' %}
-{% import 'translations.html' as translations with context %}
-{{ translations.translations_for(post) }}
+    <abbr class="published" title="{{ post.date.isoformat() }}">
+            {{ post.date.strftime("%B %d, %Y - %H:%M") }}
+    </abbr>
+    <div class="clearfix"></div>
+    <abbr class="translations">
+        {% import 'translations.html' as translations with context %}
+        {{ translations.translations_for(post) }}
+    </abbr>
+    {% include 'taglist.html' %}
 </footer><!-- /.post-info -->

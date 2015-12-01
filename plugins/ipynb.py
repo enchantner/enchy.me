@@ -16,7 +16,7 @@ from pelican.readers import MarkdownReader, HTMLReader, BaseReader
 
 import IPython
 try:
-    # Jupyter  
+    # Jupyter
     from traitlets.config import Config
 except ImportError:
     # IPython < 4.0
@@ -153,7 +153,7 @@ class IPythonNB(BaseReader):
 
             return '<style type=\"text/css\">{0}</style>'.format(style_text)
 
-        ipython_css = '\n'.join(filter_css(css_style) for css_style in info['inlining']['css'])
+        ipython_css = '' # '\n'.join(filter_css(css_style) for css_style in info['inlining']['css'])
         body = ipython_css + body + LATEX_CUSTOM_SCRIPT
 
         return body, metadata

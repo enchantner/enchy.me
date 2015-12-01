@@ -71,7 +71,6 @@ MARKUP = ('md', 'ipynb')
 PLUGIN_PATHS = ['./plugins']
 PLUGINS = [
     'ipynb',
-    'i18n_subsites',
     'tipue_search',
     'sitemap',
     'disqus_static'

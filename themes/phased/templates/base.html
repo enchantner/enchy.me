@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/main.css" />
         <!--[if lte IE 8]><link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/ie8.css" /><![endif]-->
         <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/custom/css/main.css" />
+        {% block styles %}{% endblock styles %}
 
         {% if FEED_ALL_ATOM %}
         <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Atom Feed" />
@@ -88,10 +89,10 @@
                         <div class="5u 12u(mobile)">
                             <section>
                                 <header>
-                                    <h2>Feugiat sed posuere arcu larem. Auctor lorem sit amet suscipit consequat?</h2>
+                                    <h2>You want to establish a business contact, hire me or just talk to me?</h2>
                                 </header>
-                                <p>Tusce rhoncus pulvinar tortor, a rhoncus diam hendrerit ut. Etiam orci sapien, semper impri morbi vulputate ibendum ultrices. Donec vel consequat erat Sed facilisis eleifend fermenat magna a ac ac lacus. Ut ac sapien nulla uisque orna. Neque, vitae ultrices eros justo sed sem dolor. Tusce rhoncus pulvinar tortor, a rhoncus diam hendrerit ut. Etiam orci sapien, semper.</p>
-                                <a href="#" class="button">More Info</a>
+                                <p>Drop me a letter. If you're serious and not going to send spam messages and ads, feel free to click this button below.</p>
+                                <a href="mailto:enchantner@gmail.com" class="button">Email me</a>
                             </section>
                         </div>
                     </div>

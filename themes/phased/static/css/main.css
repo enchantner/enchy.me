@@ -1,4 +1,4 @@
-@import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Bitter:400,700");
+@import url("http://fonts.googleapis.com/css?family=Roboto:300,400,700|Roboto+Slab:400,700&subset=latin,cyrillic");
 @import url("font-awesome.min.css");
 
 /*
@@ -1070,7 +1070,7 @@
 
 	body {
 		background: #272d35;
-		font-family: 'Source Sans Pro', sans-serif;
+		font-family: 'Roboto', sans-serif;
 		font-size: 11pt;
 		font-weight: 300;
 		color: #4d4c4b;
@@ -1100,7 +1100,7 @@
 	}
 
 	h1, h2, h3 {
-		font-family: 'Bitter', serif;
+		font-family: 'Roboto Slab', serif;
 	}
 
 	p, ul, ol, dl, table {
@@ -1123,7 +1123,7 @@
 		}
 
 	header {
-		font-family: 'Bitter', serif;
+		font-family: 'Roboto Slab', serif;
 	}
 
 		header h2 {
@@ -1182,7 +1182,7 @@
 		background: #4c955d;
 		border-radius: 5px;
 		text-decoration: none;
-		font-family: 'Bitter', serif;
+		font-family: 'Roboto Slab', serif;
 		color: #FFFFFF;
 	}
 
@@ -1233,7 +1233,7 @@
 	ul.style1 .date {
 		line-height: normal;
 		text-align: center;
-		font-family: 'Bitter', serif;
+		font-family: 'Roboto Slab', serif;
 		font-size: 1.1em;
 		font-weight: 700;
 		position: relative;
@@ -1308,7 +1308,7 @@
 		border-radius: 6px;
 		line-height: normal;
 		text-align: center;
-		font-family: 'Bitter', serif;
+		font-family: 'Roboto Slab', serif;
 		font-size: 1em;
 		font-weight: 400;
 		color: #FFFFFF;
@@ -1708,7 +1708,7 @@
 							display: block;
 							color: #eee;
 							color: white;
-							font-family: 'Bitter', serif;
+							font-family: 'Roboto Slab', serif;
 							text-decoration: none;
 							font-size: 1em;
 							font-weight: 400;
@@ -1726,7 +1726,7 @@
 			.dropotron {
 				text-align: left;
 				background: #272d35;
-				font-family: 'Source Sans Pro', sans-serif;
+				font-family: 'Roboto', sans-serif;
 				font-size: 11pt;
 				font-weight: 300;
 				padding: 0.75em 0 0.75em 0;
@@ -1786,7 +1786,7 @@
 				#banner span {
 					display: block;
 					padding-top: 1em;
-					font-family: 'Bitter', serif;
+					font-family: 'Roboto Slab', serif;
 					font-size: 1.4em;
 				}
 
@@ -2165,7 +2165,7 @@
 				#banner span {
 					display: block;
 					padding-top: 1em;
-					font-family: 'Bitter', serif;
+					font-family: 'Roboto Slab', serif;
 					font-size: 1.2em;
 				}
 

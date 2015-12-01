@@ -17,9 +17,6 @@
 
 {% block content %}
 
-{% import 'translations.html' as translations with context %}
-{{ translations.translations_for(page) }}
-
 {% set posts = articles|selectattr("contenttype", "equalto", "article") %}
 {% set links = articles|selectattr("contenttype", "equalto", "link") %}
 {% set events = articles|selectattr("contenttype", "equalto", "event") %}
@@ -37,14 +34,15 @@
 						<div class="row">
 							<div class="6u 12u(mobile)">
 								<header>
-									<a href="{{ SITEURL }}/{{ post.url }}" class="post-header"><h2>{{ post.title|striptags }}</h2></a>
+									<a href="{{ SITEURL }}/{{ post.url }}" class="post-header"><h2>{{ post.title|striptags }} </h2></a>
 									<span class="byline">{{ post.summary|striptags }}</span>
 								</header>
-								<p>{{ post.date.strftime("%B %d, %Y - %H:%M") }}</p>
+								{% include 'article_infos.html' %}
 								{% if post.indeximage %}<a href="#" class="image full"><img src="{{ SITEURL }}/{{ post.indeximage }}" alt=""></a>{% endif %}
 							</div>
 							<div class="6u 12u(mobile)">
-								{{ post.cut }}
+								<div class="cut">{{ post.cut }}</div>
+								<div class="clearfix"></div>
 								<a href="{{ post.url }}" class="button">Read full post</a>
 							</div>
 						</div>
@@ -89,8 +87,9 @@
 				{% for link in links %}
 				<div class="3u 12u(mobile)">
 					<a href="{{ link.link }}" class="image full">
-						<img src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/{{ link.thumbnail }}" alt="">
+						<img src="./{{ link.thumbnail }}" alt="" class="linkimage">
 					</a>
+					<p>{{ link.description }}</p>
 				</div>
 				{% endfor %}
 				<!--div class="3u 12u(mobile)">

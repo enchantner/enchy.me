@@ -3,6 +3,8 @@
 
 {% block body_class %}right-sidebar{% endblock body_class %}
 
+{% block styles %}<link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/custom/css/ipynb.css" />{% endblock styles %}
+
 {% block content %}
 {% set recent = articles|selectattr("contenttype", "equalto", "article") %}
 {% set post = article %}
@@ -21,6 +23,7 @@
                                 {% include 'article_infos.html' %}
                             </header>
                             <div class="clearfix"></div>
+                            <p>{{ post.summary }}</p>
                             {% if post.indeximage %}<a href="{{ SITEURL }}/{{ post.url }}" class="image left"><img src="{{ SITEURL }}/{{ post.indeximage }}" alt=""></a>{% endif %}
                             <p>{{ post.content }}</p>
                         </article>
